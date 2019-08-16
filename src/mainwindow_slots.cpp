@@ -30,6 +30,8 @@ void MainWindow::connectToHost()
     m_client->setPort(port);
     m_client->setUsername(user);
     m_client->setPassword(password.toLocal8Bit());
+    m_client->setKeepAlive(60);
+    m_client->setAutoReconnect(true);
     m_client->connectToHost();
 }
 
